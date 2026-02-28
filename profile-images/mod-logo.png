@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="Keywords" content="سلطنة عمان وزارة الدفاع, سلطنة عمان وزارة الدفاع">
+    <meta name="Description" content="سلطنة عمان وزارة الدفاع">
+    <meta name="Content-Type" content="سلطنة عمان وزارة الدفاع">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <title> &#x648;&#x632;&#x627;&#x631;&#x629; &#x627;&#x644;&#x62F;&#x641;&#x627;&#x639;  </title>
+
+
+
+
+    <link rel="shortcut icon" href="/AppAssets/assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="/AppAssets/assets/css/bootstrap.min.css">
+
+    <!-- Custom fonts for this template -->
+    <link href="/AppAssets/assets/css/all.css" rel="stylesheet">
+    <!--video-lightbox-->
+    <script type="text/javascript" src="/AppAssets/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/AppAssets/assets/js/lc_lightbox.js"></script>
+    <link rel="stylesheet" href="/AppAssets/assets/css/lc_lightbox.css" />
+    <link rel="stylesheet" href="/AppAssets/assets/css/open_close_fx.css" />
+    <!--animi-->
+
+    <link href="/AppAssets/assets/boxicons/css/boxicons.css" rel="stylesheet" />
+    <link href="/AppAssets/assets/boxicons/css/animations.css" rel="stylesheet" />
+    <link href="/AppAssets/assets/boxicons/css/transformations.css" rel="stylesheet" />
+    <link href="/EternalLegacyAssets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/EternalLegacyAssets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!--NewsSlider-->
+    <link href="/AppAssets/assets/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="/AppAssets/assets/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet" />
+    <link href="/AppAssets/assets/fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/NewsSliderAssets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/NewsSliderAssets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="/NewsSliderAssets/css/styles.css">
+
+    <link href="/EternalLegacyAssets/vendor/aos/aos.css" rel="stylesheet" />
+
+
+    <link href="/AppAssets/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+
+
+
+    <!--custom style-->
+        <link rel="stylesheet" href="/AppAssets/assets/css/style.css">
+    <style>
+        #stop-scrolling {
+            height: 100% !important;
+            overflow: hidden !important;
+        }
+
+        /* header {
+            min-height: 35vh !important;
+        }*/
+
+        .imgfooter {
+            border: 1px solid white;
+            border-radius: 50%;
+            padding: 7px;
+            background: white;
+        }
+
+        .btnTxtSize {
+            padding: 3px 4px 3px 4px;
+            background-color: #187373a3;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .rsbtn_play .rsbtn_left .rsbtn_text span {
+            font-size: 10px !important;
+        }
+
+
+        /* Add this to your CSS stylesheet */
+        .dropdown-submenux {
+            position: relative;
+        }
+
+            .dropdown-submenux .dropdown-menux {
+                top: 0;
+                margin-top: -1px;
+                display: none;
+            }
+
+                .dropdown-submenux .dropdown-menux.show {
+                    display: block; /* Show the submenu when it has the 'show' class */
+                    left: 100%;
+                }
+
+        .dropdown-menux {
+            left: 100%; /* Position the submenu to the left */
+        }
+        .black-x-hover:hover{
+            background-color:black
+            
+        }
+    </style>
+
+
+</head>
+<body id="stop-scrolling">
+
+
+
+    <div class="preloader  flex-center">
+            <img src="/AppAssets/assets/img/loading-bufferingAr.png" />
+    </div>
+
+    <div class="container-fluid margin0 padding0">
+
+        <header class="m-0 p-0">
+            <script type="text/javascript">
+
+                window.rsConf = { general: { usePost: true } };
+
+            </script>
+
+            <ul class="menu" style="position:absolute; top: 10px; margin-inline: 10px;">
+                <li>
+                    <button class=" btn btn-sm btn--icon btnTxtSize " id="plusBtn" onclick="plus()"><i class="fa fa-plus"></i></button>
+                    <button class=" btn btn-sm btn--icon btnTxtSize" id="minusBtn" onclick="minus()"><i class="fa fa-minus"></i></button>
+                    <button class=" btn btn-sm btn--icon  btnTxtSize" id="NormalBtn" onclick="Normal()"><i class="fa fa-refresh"></i></button>
+
+                        <a class="btn btn-sm btn--icon btnTxtSize px-2 text-white" href="/Home/ChangeLanguage"><i class="fa fa-globe"></i> &nbsp; English</a> 
+                    <form name="f1" id="f1" action="" class="btn btn-sm btn--icon p-0 m-0" style="display:none;">
+
+                        <input type="text" id="searchInput" class="t1 btn btn-sm btnTxtSize btn--icon searchInput" name="t1" value="" style="background-color:white;  color:black;" placeholder="&#x628;&#x62D;&#x62B;..." />
+
+
+
+                        <button type="submit" name="b1" class="btn btn-sm btnTxtSize btn--icon" value="Find"><i class="fa fa-search-plus"></i></button>
+
+                        
+                    </form>
+                    <button id="searchBtn" type="button" class="btn btn-sm btnTxtSize btn--icon"><i class="fa fa-search"></i></button>
+                </li>
+                <li>
+
+                </li>
+            </ul>
+            <div class="row w-100 px-md-4 m-0 ">
+                <div class="col d-flex pt-5 justify-content-between">
+
+<a href="/"> <img src="/UploadedFiles/638803089541033973.png" style="object-fit: contain" class="menu" width="100" rel="noopener noreferrer" /></a>                         <img src="/UploadedFiles/638803073981825670.png" class="menu" style="object-fit: contain; z-index: -1;" width="140" />                 </div>
+            </div>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+                <button class="navbar-toggler m-0" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav w-100 justify-content-md-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-item dropdown-toggle" data-toggle="dropdown"><br>&#x639;&#x646; &#x627;&#x644;&#x648;&#x632;&#x627;&#x631;&#x629;</a>
+                            <div class="dropdown-menu ">
+                                <a class="dropdown-item" href="/Home/MinistryInfo"rel="noopener noreferrer">&#x648;&#x632;&#x627;&#x631;&#x629; &#x627;&#x644;&#x62F;&#x641;&#x627;&#x639;</a>
+                                <a class="dropdown-item" href="/Home/COSSAF"rel="noopener noreferrer">&#x631;&#x626;&#x627;&#x633;&#x629; &#x623;&#x631;&#x643;&#x627;&#x646; &#x642;&#x648;&#x627;&#x62A; &#x627;&#x644;&#x633;&#x644;&#x637;&#x627;&#x646; &#x627;&#x644;&#x645;&#x633;&#x644;&#x62D;&#x629;</a>
+                                <a class="dropdown-item" href="/Home/RAO"rel="noopener noreferrer">&#x627;&#x644;&#x62C;&#x64A;&#x634; &#x627;&#x644;&#x633;&#x644;&#x637;&#x627;&#x646;&#x64A; &#x627;&#x644;&#x639;&#x645;&#x627;&#x646;&#x64A;</a>
+                                <a class="dropdown-item" href="/Home/RAFO"rel="noopener noreferrer">&#x633;&#x644;&#x627;&#x62D; &#x627;&#x644;&#x62C;&#x648; &#x627;&#x644;&#x633;&#x644;&#x637;&#x627;&#x646;&#x64A; &#x627;&#x644;&#x639;&#x645;&#x627;&#x646;&#x64A;</a>
+                                <a class="dropdown-item" href="/Home/RNO"rel="noopener noreferrer">&#x627;&#x644;&#x628;&#x62D;&#x631;&#x64A;&#x629; &#x627;&#x644;&#x633;&#x644;&#x637;&#x627;&#x646;&#x64A;&#x629; &#x627;&#x644;&#x639;&#x645;&#x627;&#x646;&#x64A;&#x629;</a>
+                                <a class="dropdown-item"  href="/Home/MSC"rel="noopener noreferrer">&#x645;&#x631;&#x643;&#x632; &#x627;&#x644;&#x623;&#x645;&#x646; &#x627;&#x644;&#x628;&#x62D;&#x631;&#x64A;</a>
+                               
+                                <div class="dropdown-submenux">
+
+                                    <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" style="background-color: #187373 "> &#x648;&#x62D;&#x62F;&#x627;&#x62A; &#x623;&#x62E;&#x631;&#x649; </a>
+
+                                    <div class="dropdown-menux">
+                                        <!-- Sub-dropdown items go here -->
+                                        <a class="dropdown-item" href="/Home/MODES"rel="noopener noreferrer">&#x627;&#x644;&#x62E;&#x62F;&#x645;&#x627;&#x62A; &#x627;&#x644;&#x647;&#x646;&#x62F;&#x633;&#x64A;&#x629;</a>
+                                        <a class="dropdown-item" href="/Home/NSA"rel="noopener noreferrer">&#x627;&#x644;&#x647;&#x64A;&#x626;&#x629; &#x627;&#x644;&#x648;&#x637;&#x646;&#x64A;&#x629; &#x644;&#x644;&#x645;&#x633;&#x627;&#x62D;&#x629; &#x648;&#x627;&#x644;&#x645;&#x639;&#x644;&#x648;&#x645;&#x627;&#x62A; &#x627;&#x644;&#x62C;&#x64A;&#x648;&#x645;&#x643;&#x627;&#x646;&#x64A;&#x629;</a>
+                                        <a class="dropdown-item" href="/Home/OtherUnits"rel="noopener noreferrer">&#x623;&#x62E;&#x631;&#x649; </a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li class="nav-item"> <a class="nav-link" href="/Home/SupremeCommander" rel="noopener noreferrer"><br>&#x627;&#x644;&#x642;&#x627;&#x626;&#x62F; &#x627;&#x644;&#x623;&#x639;&#x644;&#x649;</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/Home/News" rel="noopener noreferrer"><br>&#x627;&#x644;&#x623;&#x62E;&#x628;&#x627;&#x631;</a> </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-item dropdown-toggle" data-toggle="dropdown"><br>&#x627;&#x644;&#x645;&#x624;&#x633;&#x633;&#x627;&#x62A; &#x627;&#x644;&#x62A;&#x639;&#x644;&#x64A;&#x645;&#x64A;&#x629; &#x627;&#x644;&#x639;&#x633;&#x643;&#x631;&#x64A;&#x629;</a>
+                            <div class="dropdown-menu ">
+                                <a class="dropdown-item" href="https://www.asds.edu.om/" target="_blank" rel="noopener noreferrer">&#x623;&#x643;&#x627;&#x62F;&#x64A;&#x645;&#x64A;&#x629; &#x627;&#x644;&#x62F;&#x631;&#x627;&#x633;&#x627;&#x62A; &#x627;&#x644;&#x625;&#x633;&#x62A;&#x631;&#x627;&#x62A;&#x64A;&#x62C;&#x64A;&#x629; &#x648;&#x627;&#x644;&#x62F;&#x641;&#x627;&#x639;&#x64A;&#x629;</a>
+
+                                <a class="dropdown-item" href="https://www.mtc.edu.om/" target="_blank" rel="noopener noreferrer">&#x627;&#x644;&#x643;&#x644;&#x64A;&#x629; &#x627;&#x644;&#x639;&#x633;&#x643;&#x631;&#x64A;&#x629; &#x627;&#x644;&#x62A;&#x642;&#x646;&#x64A;&#x629;</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-item dropdown-toggle" data-toggle="dropdown"><br>&#x627;&#x644;&#x62E;&#x62F;&#x645;&#x627;&#x62A; &#x627;&#x644;&#x625;&#x644;&#x643;&#x62A;&#x631;&#x648;&#x646;&#x64A;&#x629;</a>
+                            <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Home/ImportantDocs" rel="noopener noreferrer">&#x645;&#x633;&#x62A;&#x646;&#x62F;&#x627;&#x62A; &#x645;&#x647;&#x645;&#x629;</a>
+                                    <a class="dropdown-item" rel="noopener noreferrer" target="_blank" href="https://tabseet.gov.om/en/Pages/SupplierLoginOption.aspx">&#x645;&#x646;&#x635;&#x629; &#x62A;&#x628;&#x633;&#x64A;&#x637;</a>
+                                    <a class="dropdown-item" target="_blank" rel="noopener noreferrer" href="https://mail.mod.gov.om/">&#x627;&#x644;&#x628;&#x631;&#x64A;&#x62F; &#x627;&#x644;&#x625;&#x644;&#x643;&#x62A;&#x631;&#x648;&#x646;&#x64A;</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-item dropdown-toggle" data-toggle="dropdown"><br>&#x627;&#x644;&#x645;&#x646;&#x635;&#x629; &#x627;&#x644;&#x625;&#x639;&#x644;&#x627;&#x645;&#x64A;&#x629;</a>
+                            <div class="dropdown-menu ">
+                                <a class="dropdown-item" href="https://alsumoodfm.om/" target="_blank" rel="noopener noreferrer">&#x625;&#x630;&#x627;&#x639;&#x629; &#x627;&#x644;&#x635;&#x645;&#x648;&#x62F;</a>
+                                <a class="dropdown-item" href="/#Jund" rel="noopener noreferrer">&#x645;&#x62C;&#x644;&#x629; &#x62C;&#x646;&#x62F; &#x639;&#x645;&#x627;&#x646; </a>
+                                <a class="dropdown-item" href="/Home/Media" rel="noopener noreferrer">&#x627;&#x644;&#x628;&#x631;&#x627;&#x645;&#x62C; &#x648;&#x627;&#x644;&#x645;&#x648;&#x627;&#x62F; &#x627;&#x644;&#x625;&#x639;&#x644;&#x627;&#x645;&#x64A;&#x629;</a>
+                            </div>
+                        </li>
+
+
+
+
+                        <li class="nav-item"> <a class="nav-link" href="/Home/EternalLegacy" rel="noopener noreferrer"><br>&#x642;&#x627;&#x628;&#x648;&#x633; &#x625;&#x631;&#x62B;&#x64C; &#x62E;&#x627;&#x644;&#x62F;</a> </li>
+
+                        <li class="nav-item"> <a class="nav-link" href="/Home/ContactUs" rel="noopener noreferrer" ><br>&#x62A;&#x648;&#x627;&#x635;&#x644; &#x645;&#x639;&#x646;&#x627;</a> </li>
+
+
+
+                    </ul>
+
+                    <div style="display:none" id="app-cover">
+                        <div id="player">
+                            <div id="player-content">
+                                <div id="player-track">
+                                    <div id="album-name"></div>
+                                    <div id="track-name"></div>
+                                    <div class="live-icon"> مباشر</div>
+                                    <div class="date_time">بتوقيت مسقط : <span id="sec"></span></div>
+                                    <div id="track-time">
+                                        <div id="current-time"></div>
+                                        <div id="track-length"></div>
+                                    </div>
+                                    <div id="s-area">
+                                        <div id="ins-time"></div>
+                                        <div id="s-hover"></div>
+                                        <div id="seek-bar"></div>
+                                    </div>
+                                </div>
+                                <div id="player-controls">
+                                    <div class="control"> </div>
+                                    <div class="control">
+                                        <div class="button" id="play-pause-button2"> <i class="fas fa-play"></i> </div>
+                                    </div>
+                                    <div class="control"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <ul class="menu topLeftaslsmod position-fixed">
+
+
+
+                    <li>
+                        <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="ReadSpeaker webReader إستمع إلى هذه الصفحةِ مستخدماً" href="https://app-eu.readspeaker.com/cgi-bin/rsent?customerid=13900&amp;lang=ar_ar&amp;voice=Amir&amp;readclass=pagebody&amp;url=https%3A%2F%2Fmod.gov.om%2F">
+                                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>استمع</span></span></span>
+                                <span class="rsbtn_right rsimg rsplay rspart"></span>
+                            </a>
+                        </div> 
+
+                            </li>
+
+                    <li class="share bottom">
+                            <i class="fa"><span class="socialsumood"><img src="/UploadedFiles/637848388641965267.png" /></span> </i>                         <ul class="submenu">
+                            <li><div class="button" id="play-pause-button"> <i style="background-color: #560f12e0;" class="fa fa-play"></i> </div></li>
+                            <li><a href="https://www.youtube.com/channel/UCVSbz84_bOZsXNomh7GyDDw" class="youtube" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://twitter.com/AL_SUMOOD_FM?s=09" class="twitter" target="_blank"rel="noopener noreferrer"><i class="fa fa-brands fa-x-twitter"></i></a></li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+
+            </nav>
+
+
+
+
+
+
+
+
+        </header>
+
+        <div class="pagebody">
+
+            <!-- 404 Error Text -->
+<div class="text-center" style="
+    margin-bottom: 230px;">
+    <div class="mx-auto display-1" data-text="404" style="
+    margin-top: 100px;margin-bottom: 25px;">404</div>
+    <p class="lead text-gray-800 mb-5">Page Not Found</p>
+    <a href="/">← Back to Home</a>
+</div>
+            <br />
+            <br />
+        </div>
+
+        <footer>
+            <div data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" class="aos-init aos-animate container p-4">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 borderfooter ">
+                            <h3 class="mb-3 titlefooter px-2 text-md-right text-center">&#x631;&#x648;&#x627;&#x628;&#x637; &#x645;&#x647;&#x645;&#x629;</h3>                            <div class="">
+
+                                    <p class="text-md-right text-center importantlinks"><a class="importantlinks" href="https://www.oman2040.om/" target="_blank" rel="noopener noreferrer">&#x631;&#x624;&#x64A;&#x629; &#x639;&#x645;&#x627;&#x646; 2040</a></p>
+                            </div>                            <div class="">
+
+                                    <p class="text-md-right text-center importantlinks"><a class="importantlinks" href="https://www.oman.om/" target="_blank" rel="noopener noreferrer">&#x628;&#x648;&#x627;&#x628;&#x629; &#x639;&#x645;&#x627;&#x646;&#x646;&#x627;</a></p>
+                            </div>                            <div class="">
+
+                                    <p class="text-md-right text-center importantlinks"><a class="importantlinks" href="http://omannews.gov.om/" target="_blank" rel="noopener noreferrer">&#x648;&#x643;&#x627;&#x644;&#x629; &#x627;&#x644;&#x623;&#x646;&#x628;&#x627;&#x621; &#x627;&#x644;&#x639;&#x645;&#x627;&#x646;&#x64A;&#x629;</a></p>
+                            </div>                            <div class="">
+
+                                    <p class="text-md-right text-center importantlinks"><a class="importantlinks" href="https://www.oman.om/wps/portal/index/gov/!ut/p/a1/hc5NC4JAEAbg39LBazO5q6k3QZQs8WCY7SXWMDXMlXUr-vdpRBD0MbeZeV5mgEEGrOWXuuSqFi1vxp6ZO4IBYmwvIpqkM9RD3zOsZK4HsTmA7QDwS7n4L78B9k6W68hFnaR-aK9M4nn0CX6cSLiEEFjZiPzx8tZtc2KVwGRxKGQhp2c5jCulut7RUMNG7HlTiV45lBLD1PBTZtxD9qLQnTI8Upbfru7kDjnEZ3s!/dl5/d5/L0lKQSEvUUt3RS80RUkhL2Fy/" target="_blank" rel="noopener noreferrer">&#x627;&#x644;&#x645;&#x624;&#x633;&#x633;&#x627;&#x62A; &#x627;&#x644;&#x62D;&#x643;&#x648;&#x645;&#x64A;&#x629;</a></p>
+                            </div>                            <div class="">
+
+                                    <p class="text-md-right text-center importantlinks"><a class="importantlinks" href="https://shababoman.mod.gov.om/" target="_blank" rel="noopener noreferrer">&#x633;&#x641;&#x64A;&#x646;&#x629; &#x634;&#x628;&#x627;&#x628; &#x639;&#x645;&#x627;&#x646;</a></p>
+                            </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6 mb-4 borderfooter text-md-right text-center">
+                        <h3 class="mb-3 titlefooter">&#x627;&#x644;&#x639;&#x646;&#x648;&#x627;&#x646; &#x627;&#x644;&#x628;&#x631;&#x64A;&#x62F;&#x64A;</h3>
+
+                        <p class="text-white"> &#x648;&#x632;&#x627;&#x631;&#x629; &#x627;&#x644;&#x62F;&#x641;&#x627;&#x639;</p>
+                        <p class="text-white"> &#x635; &#x628; &#x661;&#x661;&#x663; , &#x627;&#x644;&#x631;&#x645;&#x632; &#x627;&#x644;&#x628;&#x631;&#x64A;&#x62F;&#x64A; 100</p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 text-md-right text-center">
+                        <h3 class="mb-3 titlefooter">&#x62A;&#x627;&#x628;&#x639;&#x646;&#x627; &#x639;&#x644;&#x649;</h3>
+                        <a href="https://twitter.com/MG_MOD_OMAN" target="_blank" class="twitter"><i style="font-size:30px;" class="bx bxl-twitter" rel="noopener noreferrer"></i></a>
+                        <a href="https://www.youtube.com/channel/UCHeiXLfnlusbu8U_i_S7Yrw" target="_blank" class="youtube"><i style="font-size:30px;" class="bx bxl-youtube" rel="noopener noreferrer"></i></a>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <p style="line-height: 15px;" class="text-center paddingCopyright">
+                &nbsp; &#x62C;&#x645;&#x64A;&#x639; &#x627;&#x644;&#x62D;&#x642;&#x648;&#x642; &#x645;&#x62D;&#x641;&#x648;&#x638;&#x629; &copy; &#x648;&#x632;&#x627;&#x631;&#x629; &#x627;&#x644;&#x62F;&#x641;&#x627;&#x639; &nbsp; - &nbsp; &#x633;&#x644;&#x637;&#x646;&#x629; &#x639;&#x645;&#x627;&#x646; &nbsp; 2026
+
+            </p>
+            <!-- Copyright -->
+        </footer>
+
+
+
+    </div>
+    <div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short" rel="noopener noreferrer"></i></a>
+    </div>
+    <!--scripts-->
+
+   <script src="https://cdn-eu.readspeaker.com/script/3/webReader/webReader.js?pids=wr" type="text/javascript" id="rs_req_Init"></script>
+    <script src="/AppAssets/assets/js/jquery.slim.min.js"></script>
+    <script src="/AppAssets/assets/js/jquery_3.7.0_min.js"></script>
+    <script type="module" src="/AppAssets/assets/js/popper.js"></script>
+    <script src="/AppAssets/assets/js/bootstrap.bundle.js"></script>
+
+
+
+    <script src="/AppAssets/assets/js/bootstrap.js"></script>
+
+
+    <script src="/AppAssets/assets/js/sweetalert2.all.min.js"></script>
+    <script src="/AppAssets/lib/animi/aos.js"></script>
+
+    <script>
+        function preloaderFadeOutInit() {
+            setTimeout(function () {
+                $('.preloader').fadeOut('slow');
+                $('body').attr('id', '');
+            }, 500);
+
+
+
+
+
+
+
+            /*localStorage.setItem('#app-cover', '#player');*/
+        }
+        document.addEventListener("DOMContentLoaded", preloaderFadeOutInit);
+        // Window load function
+        //jQuery(window).on('load', function () {
+        //    (function ($) {
+        //        setTimeout(function () {
+        //            preloaderFadeOutInit()
+        //        }, 1000);
+
+        //    })(jQuery);
+        //});
+    </script>
+
+
+
+
+    <script>
+        AOS.init({
+            easing: 'ease-in-out-sine'
+        });
+    </script>
+
+    <script>
+        $(function () {
+
+            //if (performance.navigation.type == 2) {
+            //    alert("Back button clicked");
+            //}
+
+            if (localStorage.getItem('status') == "play") {
+                playPause();
+            }
+            /**/
+            var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"), i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, albums = ['الصمود FM'], trackNames = ['البث المباشر'], albumArtworks = ['_1', '_2', '_3', '_4', '_5'], trackUrl = ['https://us3.internet-radio.com/proxy/alsumoodfm2020?mp=/stream'], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+            /**/
+
+
+
+            function playPause() {
+                setTimeout(function () {
+                    if (audio.paused) {
+                        playerTrack.addClass('active');
+                        albumArt.addClass('active');
+                        checkBuffering();
+                        i.attr('class', 'fa fa-pause-circle');
+                        audio.play();
+                        localStorage.setItem('status', 'play');
+                    }
+                    else {
+                        playerTrack.removeClass('active');
+                        albumArt.removeClass('active');
+                        clearInterval(buffInterval);
+                        albumArt.removeClass('buffering');
+                        i.attr('class', 'fa fa-play');
+                        audio.pause();
+                        localStorage.setItem('status', 'pause');
+                    }
+                }, 300);
+            }
+
+
+            function showHover(event) {
+                seekBarPos = sArea.offset();
+                seekT = event.clientX - seekBarPos.left;
+                seekLoc = audio.duration * (seekT / sArea.outerWidth());
+
+                sHover.width(seekT);
+
+                cM = seekLoc / 60;
+
+                ctMinutes = Math.floor(cM);
+                ctSeconds = Math.floor(seekLoc - ctMinutes * 60);
+
+                if ((ctMinutes < 0) || (ctSeconds < 0))
+                    return;
+
+                if ((ctMinutes < 0) || (ctSeconds < 0))
+                    return;
+
+                if (ctMinutes < 10)
+                    ctMinutes = '0' + ctMinutes;
+                if (ctSeconds < 10)
+                    ctSeconds = '0' + ctSeconds;
+
+                if (isNaN(ctMinutes) || isNaN(ctSeconds))
+                    insTime.text('--:--');
+                else
+                    insTime.text(ctMinutes + ':' + ctSeconds);
+
+                insTime.css({ 'left': seekT, 'margin-left': '-21px' }).fadeIn(0);
+
+            }
+
+            function hideHover() {
+                sHover.width(0);
+                insTime.text('00:00').css({ 'left': '0px', 'margin-left': '0px' }).fadeOut(0);
+            }
+
+            function playFromClickedPos() {
+                audio.currentTime = seekLoc;
+                seekBar.width(seekT);
+                hideHover();
+            }
+
+            function updateCurrTime() {
+                nTime = new Date();
+                nTime = nTime.getTime();
+
+                if (!tFlag) {
+                    tFlag = true;
+                    trackTime.addClass('active');
+                }
+
+                curMinutes = Math.floor(audio.currentTime / 60);
+                curSeconds = Math.floor(audio.currentTime - curMinutes * 60);
+
+                durMinutes = Math.floor(audio.duration / 60);
+                durSeconds = Math.floor(audio.duration - durMinutes * 60);
+
+                playProgress = (audio.currentTime / audio.duration) * 100;
+
+                if (curMinutes < 10)
+                    curMinutes = '0' + curMinutes;
+                if (curSeconds < 10)
+                    curSeconds = '0' + curSeconds;
+
+                if (durMinutes < 10)
+                    durMinutes = '0' + durMinutes;
+                if (durSeconds < 10)
+                    durSeconds = '0' + durSeconds;
+
+                if (isNaN(curMinutes) || isNaN(curSeconds))
+                    tProgress.text('00:00');
+                else
+                    tProgress.text(curMinutes + ':' + curSeconds);
+
+                if (isNaN(durMinutes) || isNaN(durSeconds))
+                    tTime.text('00:00');
+                else
+                    tTime.text(durMinutes + ':' + durSeconds);
+
+                if (isNaN(curMinutes) || isNaN(curSeconds) || isNaN(durMinutes) || isNaN(durSeconds))
+                    trackTime.removeClass('active');
+                else
+                    trackTime.addClass('active');
+
+
+                seekBar.width(playProgress + '%');
+
+                if (playProgress == 100) {
+                    i.attr('class', 'fa fa-play');
+                    seekBar.width(0);
+                    tProgress.text('00:00');
+                    albumArt.removeClass('buffering').removeClass('active');
+                    clearInterval(buffInterval);
+                }
+            }
+
+            function checkBuffering() {
+                clearInterval(buffInterval);
+                buffInterval = setInterval(function () {
+                    if ((nTime == 0) || (bTime - nTime) > 1000)
+                        albumArt.addClass('buffering');
+                    else
+                        albumArt.removeClass('buffering');
+
+                    bTime = new Date();
+                    bTime = bTime.getTime();
+
+                }, 100);
+            }
+
+            function selectTrack(flag) {
+                if (flag == 0 || flag == 1)
+                    ++currIndex;
+                else
+                    --currIndex;
+
+                if ((currIndex > -1) && (currIndex < albumArtworks.length)) {
+                    if (flag == 0)
+                        i.attr('class', 'fa fa-play');
+                    else {
+                        albumArt.removeClass('buffering');
+                        i.attr('class', 'fa fa-pause');
+                    }
+
+                    seekBar.width(0);
+                    trackTime.removeClass('active');
+                    tProgress.text('00:00');
+                    tTime.text('00:00');
+
+                    currAlbum = albums[currIndex];
+                    currTrackName = trackNames[currIndex];
+                    currArtwork = albumArtworks[currIndex];
+
+                    audio.src = trackUrl[currIndex];
+
+                    nTime = 0;
+                    bTime = new Date();
+                    bTime = bTime.getTime();
+
+                    if (flag != 0) {
+                        audio.play();
+                        playerTrack.addClass('active');
+                        albumArt.addClass('active');
+
+                        clearInterval(buffInterval);
+                        checkBuffering();
+                    }
+
+                    albumName.text(currAlbum);
+                    trackName.text(currTrackName);
+                    albumArt.find('img.active').removeClass('active');
+                    $('#' + currArtwork).addClass('active');
+
+                    bgArtworkUrl = $('#' + currArtwork).attr('src');
+
+                    bgArtwork.css({ 'background-image': 'url(' + bgArtworkUrl + ')' });
+                }
+                else {
+                    if (flag == 0 || flag == 1)
+                        --currIndex;
+                    else
+                        ++currIndex;
+                }
+            }
+
+            function initPlayer() {
+                audio = new Audio();
+
+                selectTrack(0);
+
+                audio.loop = false;
+
+                playPauseButton.on('click', playPause);
+
+                sArea.mousemove(function (event) { showHover(event); });
+
+                sArea.mouseout(hideHover);
+
+                sArea.on('click', playFromClickedPos);
+
+                $(audio).on('timeupdate', updateCurrTime);
+
+                playPreviousTrackButton.on('click', function () { selectTrack(-1); });
+                playNextTrackButton.on('click', function () { selectTrack(1); });
+            }
+
+            initPlayer();
+
+
+        });
+    </script>
+    <script>
+
+
+
+        var currFFZoom = 1;
+        var currIEZoom = 100;
+
+
+
+        function Normal() {
+            currFFZoom = 1;
+            currIEZoom = 100;
+
+            $('body').css('MozTransform', 'scale(' + currFFZoom + ')');
+            $('body').css('zoom', ' ' + currIEZoom + '%');
+        };
+
+
+        function plus() {
+            //alert('sad');
+            var step = 0.02;
+            currFFZoom += step;
+            $('body').css('MozTransform', 'scale(' + currFFZoom + ')');
+            var stepie = 2;
+            currIEZoom += stepie;
+            $('body').css('zoom', ' ' + currIEZoom + '%');
+
+        };
+        function minus() {
+            //alert('sad');
+            var step = 0.02;
+            currFFZoom -= step;
+            $('body').css('MozTransform', 'scale(' + currFFZoom + ')');
+            var stepie = 2;
+            currIEZoom -= stepie;
+            $('body').css('zoom', ' ' + currIEZoom + '%');
+        };
+
+    </script>
+
+    <script src="/AppAssets/lib/timezone/time.js"></script>
+
+    <script src="/EternalLegacyAssets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/EternalLegacyAssets/js/main.js"></script>
+
+
+    <!--NewsSliderScript-->
+
+    <script src="/NewsSliderAssets/js/owl.carousel.min.js"></script>
+    <script src="/NewsSliderAssets/js/script.js"></script>
+
+    <script src="/EternalLegacyAssets/vendor/aos/aos.js"></script>
+    <script>
+
+
+
+        $('.owl-carousel').owlCarousel({
+            nav: true,
+            loop: true,
+            dots: true,
+            pagination: false,
+            margin: 25,
+            lazyLoad: true,
+            responsiveClass: true,
+            autoplaySpeed: 2000,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            autoplay: true,
+            center: true,
+            autoHeight: false,
+            stagePadding: 200,
+            responsive: {
+                0: {
+                    items: 1,
+                    stagePadding: 0,
+                    margin: 0,
+                },
+                768: {
+                    items: 1,
+                    stagePadding: 150,
+                    /*margin: 10,*/
+                },
+
+                1000: {
+                    items: 1,
+                    stagePadding: 200
+                },
+
+                1200: {
+                    items: 3,
+                    stagePadding: 0
+                },
+
+                2000: {
+                    items: 5,
+                    stagePadding: 0
+                }
+            }
+
+        });
+    </script>
+
+
+    <script>
+
+
+        var TRange = null;
+
+        function findString(str) {
+            if (parseInt(navigator.appVersion) < 4) return;
+            var strFound;
+            if (window.find) {
+                // CODE FOR BROWSERS THAT SUPPORT window.find
+                strFound = self.find(str);
+                if (strFound && self.getSelection && !self.getSelection().anchorNode) {
+                    strFound = self.find(str)
+                }
+                if (!strFound) {
+                    strFound = self.find(str, 0, 1)
+                    while (self.find(str, 0, 1)) continue
+                }
+            } else if (navigator.appName.indexOf("Microsoft") != -1) {
+                // EXPLORER-SPECIFIC CODE
+                if (TRange != null) {
+                    TRange.collapse(false)
+                    strFound = TRange.findText(str)
+                    if (strFound) TRange.select()
+                }
+                if (TRange == null || strFound == 0) {
+                    TRange = self.document.body.createTextRange()
+                    strFound = TRange.findText(str)
+                    if (strFound) TRange.select()
+                }
+            } else if (navigator.appName == "Opera") {
+                 swal('&#x646;&#x639;&#x62A;&#x630;&#x631; &#x644;&#x627; &#x64A;&#x62F;&#x639;&#x645; &#x647;&#x630;&#x627; &#x627;&#x644;&#x645;&#x62A;&#x635;&#x641;&#x62D;!', "", "warning")
+                alert("Opera browsers not supported, sorry...")
+                return;
+            }
+            if (!strFound) swal('&#x644;&#x627;&#x64A;&#x648;&#x62C;&#x62F;!', "", "warning")
+                //alert("String '" + str + "' not found!")
+            return;
+        };
+
+        document.getElementById('f1').onsubmit = function () {
+            findString(this.t1.value);
+            return false;
+        };
+    </script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            $("#searchBtn").click(function () {
+                $("#f1").toggle();
+            });
+        });
+
+    </script>
+
+
+
+
+    <!-- Add this to your HTML file, ensure jQuery is included -->
+   
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenux').hover(function () {
+                // Toggle the 'show' class on hover
+                $(this).find('.dropdown-menux').toggleClass('show');
+  
+            });
+        });
+    </script>
+
+
+
+    
+
+</body>
+</html>

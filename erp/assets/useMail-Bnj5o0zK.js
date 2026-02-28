@@ -1,0 +1,1 @@
+import{e as n}from"./actions-BTh9aIOf.js";import{u as i,n as r}from"./index-BJn_oD1P.js";import{h as c}from"./selectors-CfGAJljn.js";function d({entity:s}){const{isLoading:t}=i(c),o=r();return{send:e=>{const a={id:e};o(n.mail({entity:s,jsonData:a}))},isLoading:t}}export{d as u};

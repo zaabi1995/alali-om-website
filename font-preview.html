@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arabic Font Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Cairo:wght@400;700&family=Amiri:wght@400;700&family=Noto+Kufi+Arabic:wght@400;700&family=Lateef&family=IBM+Plex+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f5f5; padding: 40px; font-size: 16px; }
+  h1 { font-family: sans-serif; text-align: center; margin-bottom: 30px; color: #333; font-size: 18px; }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-right: 5px solid #034D57;
+  }
+  .font-name {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    direction: ltr;
+    text-align: left;
+  }
+  .sample-big { font-size: 28px; font-weight: 700; color: #034D57; margin-bottom: 6px; }
+  .sample-mid { font-size: 18px; font-weight: 400; color: #333; margin-bottom: 4px; }
+  .sample-small { font-size: 13px; font-weight: 400; color: #666; }
+
+  .tajawal .sample-big, .tajawal .sample-mid, .tajawal .sample-small { font-family: 'Tajawal', sans-serif; }
+  .cairo .sample-big, .cairo .sample-mid, .cairo .sample-small { font-family: 'Cairo', sans-serif; }
+  .amiri .sample-big, .amiri .sample-mid, .amiri .sample-small { font-family: 'Amiri', serif; }
+  .kufi .sample-big, .kufi .sample-mid, .kufi .sample-small { font-family: 'Noto Kufi Arabic', sans-serif; }
+  .lateef .sample-big, .lateef .sample-mid, .lateef .sample-small { font-family: 'Lateef', serif; }
+  .ibm .sample-big, .ibm .sample-mid, .ibm .sample-small { font-family: 'IBM Plex Arabic', sans-serif; }
+
+  .current { border-right-color: #4CB480; }
+  .current .font-name::after { content: " ← current"; color: #4CB480; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>Arabic Font Comparison — Company Profile</h1>
+
+<div class="card tajawal current">
+  <div class="font-name">Tajawal</div>
+  <div class="sample-big">شركة العلالي للاستثمار</div>
+  <div class="sample-mid">نبني الجسور بين عُمان والعالم</div>
+  <div class="sample-small">الدفاع والأمن | النفط والغاز | الطيران | البناء والبنية التحتية</div>
+</div>
+
+<div class="card cairo">
+  <div class="font-name">Cairo</div>
+  <div class="sample-big">شركة العلالي للاستثمار</div>
+  <div class="sample-mid">نبني الجسور بين عُمان والعالم</div>
+  <div class="sample-small">الدفاع والأمن | النفط والغاز | الطيران | البناء والبنية التحتية</div>
+</div>
+
+<div class="card amiri">
+  <div class="font-name">Amiri</div>
+  <div class="sample-big">شركة العلالي للاستثمار</div>
+  <div class="sample-mid">نبني الجسور بين عُمان والعالم</div>
+  <div class="sample-small">الدفاع والأمن | النفط والغاز | الطيران | البناء والبنية التحتية</div>
+</div>
+
+<div class="card kufi">
+  <div class="font-name">Noto Kufi Arabic</div>
+  <div class="sample-big">شركة العلالي للاستثمار</div>
+  <div class="sample-mid">نبني الجسور بين عُمان والعالم</div>
+  <div class="sample-small">الدفاع والأمن | النفط والغاز | الطيران | البناء والبنية التحتية</div>
+</div>
+
+<div class="card lateef">
+  <div class="font-name">Lateef</div>
+  <div class="sample-big">شركة العلالي للاستثمار</div>
+  <div class="sample-mid">نبني الجسور بين عُمان والعالم</div>
+  <div class="sample-small">الدفاع والأمن | النفط والغاز | الطيران | البناء والبنية التحتية</div>
+</div>
+
+<div class="card ibm">
+  <div class="font-name">IBM Plex Arabic</div>
+  <div class="sample-big">شركة العلالي للاستثمار</div>
+  <div class="sample-mid">نبني الجسور بين عُمان والعالم</div>
+  <div class="sample-small">الدفاع والأمن | النفط والغاز | الطيران | البناء والبنية التحتية</div>
+</div>
+
+</body>
+</html>

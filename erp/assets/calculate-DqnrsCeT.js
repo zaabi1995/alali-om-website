@@ -1,0 +1,1 @@
+import{c as e}from"./useMoney-Cc4lFmj1.js";const a={add:(r,u)=>e(r).add(u).value,sub:(r,u)=>e(r).subtract(u).value,multiply:(r,u)=>e(r).multiply(u).value,divide:(r,u)=>e(r).divide(u).value};export{a as c};

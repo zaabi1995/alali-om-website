@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found — Alali Investment.">
+    <meta name="robots" content="noindex, follow">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Page Not Found | Alali Investment">
+    <meta property="og:description" content="The page you are looking for could not be found. Return to the Alali Investment homepage.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alali.om/404.html">
+    <meta property="og:image" content="https://alali.om/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Alali Investment">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Page Not Found | Alali Investment">
+    <meta name="twitter:description" content="The page you are looking for could not be found. Return to the Alali Investment homepage.">
+    <meta name="twitter:image" content="https://alali.om/assets/og-image.jpg">
+    <title>404 — Page Not Found | Alali Investment</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=6">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png?v=6">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=6">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#034d57',
+                            50:  '#f0fafb',
+                            100: '#d0eff2',
+                            200: '#a3dae2',
+                            300: '#5fbdca',
+                            400: '#2d9ab0',
+                            500: '#1a7d94',
+                            600: '#166578',
+                            700: '#165362',
+                            800: '#034d57',
+                            900: '#03404a',
+                        },
+                        accent: {
+                            DEFAULT: '#2D9F5D',
+                            50:  '#f0faf5',
+                            100: '#dcf5e8',
+                            200: '#bce9d3',
+                            300: '#89d6b0',
+                            400: '#4cb480',
+                            500: '#2D9F5D',
+                            600: '#228248',
+                            700: '#1b6a3b',
+                            800: '#175530',
+                            900: '#124529',
+                        },
+                        cream: '#faf8f5',
+                    },
+                    fontFamily: {
+                        inter:   ['Inter', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/style.css?v=6">
+    <style>
+        [lang="ar"] .en-text { display: none; }
+        [lang="en"] .ar-text { display: none; }
+        .error-code {
+            font-size: clamp(6rem, 20vw, 10rem);
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #034d57 0%, #2D9F5D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-cream page-inner" id="body">
+
+<!-- NAVBAR — always solid on inner pages -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50" style="background:rgba(3,77,87,.97);backdrop-filter:blur(12px);box-shadow:0 2px 24px rgba(0,0,0,.2)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <a href="/" aria-label="Alali Investment"><img src="/logo.svg" alt="Alali Investment" class="h-12 w-auto brightness-0 invert"></a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="/" class="text-white/80 hover:text-white transition-colors font-medium text-sm" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="/about.html" class="text-white/80 hover:text-white transition-colors font-medium text-sm" data-en="About" data-ar="عن الشركة">About</a>
+                <a href="/services.html" class="text-white/80 hover:text-white transition-colors font-medium text-sm" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="/clients.html" class="text-white/80 hover:text-white transition-colors font-medium text-sm" data-en="Clients" data-ar="العملاء">Clients</a>
+                <a href="/contact.html" class="text-white/80 hover:text-white transition-colors font-medium text-sm" data-en="Contact" data-ar="تواصل">Contact</a>
+                <button onclick="toggleLanguage()" class="flex items-center gap-1.5 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition-all text-sm font-medium" aria-label="Toggle language">
+                    <i class="fa-solid fa-language text-base"></i>
+                    <span id="lang-label">العربية</span>
+                </button>
+            </div>
+            <div class="md:hidden flex items-center gap-3">
+                <button onclick="toggleLanguage()" class="flex items-center gap-1 bg-white/20 text-white px-3 py-1.5 rounded-full text-xs font-medium">
+                    <i class="fa-solid fa-language"></i><span id="lang-label-mobile">AR</span>
+                </button>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-white text-xl" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10" style="background:rgba(3,77,87,.97);backdrop-filter:blur(12px)">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
+            <a href="/" class="text-white/90 hover:text-white py-2 font-medium" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a href="/about.html" class="text-white/90 hover:text-white py-2 font-medium" data-en="About" data-ar="عن الشركة">About</a>
+            <a href="/services.html" class="text-white/90 hover:text-white py-2 font-medium" data-en="Services" data-ar="الخدمات">Services</a>
+            <a href="/clients.html" class="text-white/90 hover:text-white py-2 font-medium" data-en="Clients" data-ar="العملاء">Clients</a>
+            <a href="/contact.html" class="text-white/90 hover:text-white py-2 font-medium" data-en="Contact" data-ar="تواصل">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     404 CONTENT
+══════════════════════════════════════════════════════ -->
+<main class="min-h-screen flex flex-col items-center justify-center px-4 pt-20 pb-16">
+    <div class="max-w-2xl w-full text-center">
+
+        <!-- Error Number -->
+        <div class="error-code mb-4">404</div>
+
+        <!-- Icon -->
+        <div class="flex justify-center mb-8">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center" style="background:rgba(3,77,87,.1)">
+                <i class="fa-solid fa-map-location-dot text-primary text-3xl"></i>
+            </div>
+        </div>
+
+        <!-- English message -->
+        <h1 class="text-3xl sm:text-4xl font-bold text-primary mb-3 en-text">Page Not Found</h1>
+        <p class="text-gray-500 text-lg mb-2 en-text">
+            The page you are looking for doesn't exist or has been moved.
+        </p>
+
+        <!-- Arabic message -->
+        <h1 class="text-3xl sm:text-4xl font-bold text-primary mb-3 ar-text" dir="rtl">الصفحة غير موجودة</h1>
+        <p class="text-gray-500 text-lg mb-2 ar-text" dir="rtl">
+            الصفحة التي تبحث عنها غير موجودة أو تم نقلها.
+        </p>
+
+        <!-- Divider -->
+        <div class="w-16 h-1 bg-accent rounded-full mx-auto my-8"></div>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/"
+               class="inline-flex items-center justify-center gap-2.5 bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-primary-700 transition-all shadow-lg hover:-translate-y-0.5">
+                <i class="fa-solid fa-house"></i>
+                <span class="en-text">Return to Homepage</span>
+                <span class="ar-text">العودة إلى الرئيسية</span>
+            </a>
+            <a href="/contact.html"
+               class="inline-flex items-center justify-center gap-2.5 bg-white text-primary border-2 border-primary/20 font-semibold px-8 py-4 rounded-full hover:border-primary/50 transition-all shadow hover:-translate-y-0.5">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="en-text">Contact Us</span>
+                <span class="ar-text">تواصل معنا</span>
+            </a>
+        </div>
+
+        <!-- Quick links -->
+        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <a href="/about.html" class="group flex flex-col items-center gap-2 p-4 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <i class="fa-solid fa-building-columns text-primary text-sm"></i>
+                </div>
+                <span class="text-xs font-semibold text-gray-600 en-text">About</span>
+                <span class="text-xs font-semibold text-gray-600 ar-text">عن الشركة</span>
+            </a>
+            <a href="/services.html" class="group flex flex-col items-center gap-2 p-4 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <i class="fa-solid fa-gear text-primary text-sm"></i>
+                </div>
+                <span class="text-xs font-semibold text-gray-600 en-text">Services</span>
+                <span class="text-xs font-semibold text-gray-600 ar-text">الخدمات</span>
+            </a>
+            <a href="/clients.html" class="group flex flex-col items-center gap-2 p-4 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <i class="fa-solid fa-handshake text-primary text-sm"></i>
+                </div>
+                <span class="text-xs font-semibold text-gray-600 en-text">Clients</span>
+                <span class="text-xs font-semibold text-gray-600 ar-text">العملاء</span>
+            </a>
+            <a href="/contact.html" class="group flex flex-col items-center gap-2 p-4 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <i class="fa-solid fa-phone text-primary text-sm"></i>
+                </div>
+                <span class="text-xs font-semibold text-gray-600 en-text">Contact</span>
+                <span class="text-xs font-semibold text-gray-600 ar-text">تواصل</span>
+            </a>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-primary-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="/" aria-label="Alali Investment">
+                <img src="/logo.svg" alt="Alali Investment" class="h-10 w-auto brightness-0 invert">
+            </a>
+            <p class="text-sm" style="color:rgba(255,255,255,.5)">
+                <span class="en-text">&copy; 2026 Alali Investment. All rights reserved.</span>
+                <span class="ar-text">&copy; 2026 العلالي للاستثمار. جميع الحقوق محفوظة.</span>
+            </p>
+            <p class="text-xs flex items-center gap-1.5" style="color:rgba(255,255,255,.35)">
+                <i class="fa-solid fa-globe"></i>
+                <span class="en-text">Sultanate of Oman</span>
+                <span class="ar-text">سلطنة عمان</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<a id="whatsapp-fab" href="https://api.whatsapp.com/send?phone=96899532326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+</a>
+
+<script>
+// Minimal language toggle for 404 page
+(function() {
+    var html = document.documentElement;
+    var body = document.getElementById('body');
+    var saved = localStorage.getItem('alali-lang') || 'en';
+    function applyLang(lang) {
+        html.setAttribute('lang', lang);
+        html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        if (body) {
+            body.style.fontFamily = lang === 'ar' ? "'Tajawal', sans-serif" : "'Inter', sans-serif";
+        }
+        var ll = document.getElementById('lang-label');
+        var llm = document.getElementById('lang-label-mobile');
+        if (ll)  ll.textContent  = lang === 'ar' ? 'English' : 'العربية';
+        if (llm) llm.textContent = lang === 'ar' ? 'EN' : 'AR';
+        // Update data-en/data-ar elements
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+            el.textContent = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+        });
+        localStorage.setItem('alali-lang', lang);
+    }
+    window.toggleLanguage = function() {
+        var current = html.getAttribute('lang') || 'en';
+        applyLang(current === 'ar' ? 'en' : 'ar');
+    };
+    applyLang(saved);
+})();
+</script>
+</body>
+</html>

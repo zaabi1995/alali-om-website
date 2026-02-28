@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alali Investment - Oman's trusted gateway for trading, supply and special projects.">
+    <title>Alali Investment | العلالي للإستثمار</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#034d57',
+                        accent:  '#2D9F5D',
+                        cream:   '#faf8f5',
+                    },
+                    fontFamily: {
+                        inter:   ['Inter', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        [dir="rtl"] { font-family: 'Tajawal', sans-serif; }
+
+        @keyframes gradientShift {
+            0%   { background-position: 0%   50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0%   50%; }
+        }
+        .hero-gradient {
+            background: linear-gradient(-45deg, #034d57, #2D9F5D, #045e6b, #1a8a4a, #034d57);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        @keyframes dotBounce {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50%       { transform: translateY(-10px); opacity: .6; }
+        }
+        @keyframes logoPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: .8; transform: scale(.97); }
+        }
+        #loading-screen {
+            position: fixed; inset: 0; background: #034d57;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 9999; transition: opacity .5s ease;
+        }
+        #loading-screen img { animation: logoPulse 1.6s ease infinite; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.9); animation: dotBounce .7s ease infinite; }
+        .dot:nth-child(2) { animation-delay: .18s; }
+        .dot:nth-child(3) { animation-delay: .36s; }
+
+        #navbar { transition: background .3s ease, box-shadow .3s ease; }
+        #navbar.scrolled {
+            background: rgba(3,77,87,.97) !important;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 24px rgba(0,0,0,.2);
+        }
+
+        #mobile-menu { display: none; }
+        #mobile-menu.open { display: flex; }
+
+        .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .title-bar { width: 56px; height: 4px; background: linear-gradient(to right, #034d57, #2D9F5D); border-radius: 2px; margin: .75rem auto 2rem; }
+
+        .vision-box { background: rgba(3,77,87,.05); border-left: 4px solid #2D9F5D; border-radius: 0 .875rem .875rem 0; padding: 1.5rem; }
+        [dir="rtl"] .vision-box { border-left: none; border-right: 4px solid #2D9F5D; border-radius: .875rem 0 0 .875rem; }
+
+        .service-card { transition: transform .3s ease, box-shadow .3s ease; }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(3,77,87,.14); }
+
+        .track-card { background: #fff; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,.07); border-left: 4px solid #2D9F5D; transition: transform .3s ease, box-shadow .3s ease; }
+        .track-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(3,77,87,.14); }
+        [dir="rtl"] .track-card { border-left: none; border-right: 4px solid #2D9F5D; }
+
+        .logo-card { display: flex; align-items: center; justify-content: center; padding: 1rem; border-radius: .75rem; transition: box-shadow .25s ease; }
+        .logo-card:hover { box-shadow: 0 4px 16px rgba(3,77,87,.12); }
+        .logo-img-client { max-height: 80px; width: 100%; object-fit: contain; filter: grayscale(100%); opacity: .65; transition: filter .3s ease, opacity .3s ease; }
+        .logo-img-client:hover { filter: grayscale(0%); opacity: 1; }
+
+        .partnership-item { display: flex; align-items: flex-start; gap: 1rem; background: #fff; border-radius: .875rem; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,.06); transition: transform .3s ease; }
+        .partnership-item:hover { transform: translateY(-3px); }
+
+        .monogram { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #034d57, #2D9F5D); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 700; color: #fff; margin: 0 auto 1.25rem; box-shadow: 0 4px 16px rgba(3,77,87,.25); }
+
+        .map-placeholder { background: linear-gradient(135deg, #e4f2f5, #d1eade); border-radius: .875rem; height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #034d57; }
+
+        #whatsapp-fab { position: fixed; bottom: 84px; right: 20px; z-index: 900; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,.45); transition: transform .3s ease; text-decoration: none; }
+        [dir="rtl"] #whatsapp-fab { right: auto; left: 20px; }
+        #whatsapp-fab:hover { transform: scale(1.12); }
+
+        #scroll-top { position: fixed; bottom: 20px; right: 20px; z-index: 900; width: 48px; height: 48px; border-radius: 50%; background: #034d57; border: none; color: #fff; font-size: 1.1rem; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(3,77,87,.35); transition: transform .3s ease, background .3s ease; }
+        [dir="rtl"] #scroll-top { right: auto; left: 20px; }
+        #scroll-top.show { display: flex; }
+        #scroll-top:hover { background: #2D9F5D; transform: scale(1.06); }
+
+        [dir="rtl"] .chev { transform: scaleX(-1); display: inline-block; }
+
+        #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: #034d57; color: #fff; padding: .75rem 1.75rem; border-radius: 2rem; font-size: .9rem; z-index: 2000; box-shadow: 0 6px 24px rgba(0,0,0,.2); opacity: 0; transition: opacity .4s ease, transform .4s ease; pointer-events: none; }
+        #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23034d57' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+        [dir="rtl"] select { background-position: left 1rem center; padding-right: 1rem; padding-left: 2.5rem; }
+    </style>
+</head>
+<body class="bg-white">
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+    <div class="text-center">
+        <img src="/logo.svg" alt="Alali Investment" class="h-24 w-auto mx-auto mb-6">
+        <div class="flex justify-center gap-2">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <a href="#" aria-label="Alali Investment">
+                <img src="/logo.svg" alt="Alali Investment" class="h-12 w-auto">
+            </a>
+            <div class="hidden md:flex items-center gap-7">
+                <a href="#about"        class="text-white hover:text-green-300 transition-colors font-medium text-sm" data-en="About" data-ar="عن الشركة">About</a>
+                <a href="#services"     class="text-white hover:text-green-300 transition-colors font-medium text-sm" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="#track-record" class="text-white hover:text-green-300 transition-colors font-medium text-sm" data-en="Track Record" data-ar="سجل الأعمال">Track Record</a>
+                <a href="#clients"      class="text-white hover:text-green-300 transition-colors font-medium text-sm" data-en="Clients" data-ar="العملاء">Clients</a>
+                <a href="#team"         class="text-white hover:text-green-300 transition-colors font-medium text-sm" data-en="Team" data-ar="الفريق">Team</a>
+                <a href="#contact"      class="text-white hover:text-green-300 transition-colors font-medium text-sm" data-en="Contact" data-ar="تواصل">Contact</a>
+                <button onclick="toggleLanguage()" class="flex items-center gap-1.5 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition-all text-sm font-medium" aria-label="Toggle language">
+                    <i class="fa-solid fa-language text-base"></i>
+                    <span id="lang-label">العربية</span>
+                </button>
+            </div>
+            <div class="md:hidden flex items-center gap-3">
+                <button onclick="toggleLanguage()" class="flex items-center gap-1 bg-white/20 text-white px-3 py-1.5 rounded-full text-xs font-medium">
+                    <i class="fa-solid fa-language"></i>
+                    <span id="lang-label-mobile">AR</span>
+                </button>
+                <button onclick="toggleMobileMenu()" class="text-white text-xl" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden flex-col border-t border-white/10" style="background:rgba(3,77,87,.97);backdrop-filter:blur(12px)">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-4">
+            <a href="#about"        onclick="closeMobileMenu()" class="text-white/90 hover:text-white py-1 font-medium" data-en="About" data-ar="عن الشركة">About</a>
+            <a href="#services"     onclick="closeMobileMenu()" class="text-white/90 hover:text-white py-1 font-medium" data-en="Services" data-ar="الخدمات">Services</a>
+            <a href="#track-record" onclick="closeMobileMenu()" class="text-white/90 hover:text-white py-1 font-medium" data-en="Track Record" data-ar="سجل الأعمال">Track Record</a>
+            <a href="#clients"      onclick="closeMobileMenu()" class="text-white/90 hover:text-white py-1 font-medium" data-en="Clients" data-ar="العملاء">Clients</a>
+            <a href="#team"         onclick="closeMobileMenu()" class="text-white/90 hover:text-white py-1 font-medium" data-en="Team" data-ar="الفريق">Team</a>
+            <a href="#contact"      onclick="closeMobileMenu()" class="text-white/90 hover:text-white py-1 font-medium" data-en="Contact" data-ar="تواصل">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- 1. HERO -->
+<section id="hero" class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute -top-48 -right-48 w-96 h-96 rounded-full bg-white/5"></div>
+        <div class="absolute -bottom-48 -left-48 w-96 h-96 rounded-full bg-white/5"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-white/10"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full border border-white/8"></div>
+    </div>
+    <div class="relative z-10 text-center text-white px-4 py-24 max-w-4xl mx-auto">
+        <div class="mb-8 drop-shadow-2xl">
+            <img src="/logo.svg" alt="Alali Investment" class="h-32 w-auto mx-auto">
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 tracking-tight">
+            <span data-en="Alali Investment" data-ar="العلالي للإستثمار">Alali Investment</span>
+        </h1>
+        <p class="text-2xl sm:text-3xl font-light mb-6" style="color:rgba(255,255,255,.75)">
+            <span data-en="العلالي للإستثمار" data-ar="Alali Investment">العلالي للإستثمار</span>
+        </p>
+        <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light" style="color:rgba(255,255,255,.9)"
+           data-en="Your trusted partner for trading, supply &amp; special projects in Oman"
+           data-ar="شريكك الموثوق للتجارة والتوريد والمشاريع الخاصة في عُمان">
+            Your trusted partner for trading, supply &amp; special projects in Oman
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#about" class="inline-flex items-center gap-2.5 bg-white text-primary font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                <i class="fa-solid fa-circle-info"></i>
+                <span data-en="Learn More" data-ar="اعرف أكثر">Learn More</span>
+            </a>
+            <a href="#contact" class="inline-flex items-center gap-2.5 border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-primary transition-all shadow-xl hover:-translate-y-1">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <span data-en="Contact Us" data-ar="تواصل معنا">Contact Us</span>
+            </a>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-white/50 text-xl"></i>
+        </div>
+    </div>
+</section>
+
+<!-- 2. ABOUT -->
+<section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary" data-en="About Us" data-ar="عن الشركة">About Us</h2>
+            <div class="title-bar"></div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="fade-in">
+                <h3 class="text-2xl font-bold text-primary mb-5" data-en="Company Overview" data-ar="نبذة عن الشركة">Company Overview</h3>
+                <p class="text-gray-600 leading-relaxed text-lg mb-8"
+                   data-en="Alali Investment is a Muscat-based trading and supply company dedicated to providing Special Projects &amp; Contracts solutions and high-quality products across a wide range of sectors. Our expertise covers defense, security, oil &amp; gas, aviation, construction, infrastructure, renewable energy, logistics, and general trading."
+                   data-ar="العلالي للإستثمار هي شركة تجارية وتوريد مقرها مسقط، مكرّسة لتقديم حلول المشاريع والعقود الخاصة ومنتجات عالية الجودة عبر مجموعة واسعة من القطاعات. تشمل خبرتنا الدفاع والأمن والنفط والغاز والطيران والبناء والبنية التحتية والطاقة المتجددة واللوجستيات والتجارة العامة.">
+                    Alali Investment is a Muscat-based trading and supply company dedicated to providing Special Projects &amp; Contracts solutions and high-quality products across a wide range of sectors. Our expertise covers defense, security, oil &amp; gas, aviation, construction, infrastructure, renewable energy, logistics, and general trading.
+                </p>
+                <div class="vision-box">
+                    <h4 class="font-bold text-primary mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-eye text-accent"></i>
+                        <span data-en="Our Vision" data-ar="رؤيتنا">Our Vision</span>
+                    </h4>
+                    <p class="text-gray-600 italic leading-relaxed"
+                       data-en="To stand as Oman's most trusted gateway for global suppliers and customers, delivering world-class trading and supply solutions."
+                       data-ar="أن نكون البوابة الأكثر ثقة في عُمان للموردين والعملاء العالميين.">
+                        To stand as Oman's most trusted gateway for global suppliers and customers, delivering world-class trading and supply solutions.
+                    </p>
+                </div>
+            </div>
+            <div class="fade-in grid grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8 text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl font-extrabold text-primary mb-2">10+</div>
+                    <div class="text-gray-500 font-medium" data-en="Years Experience" data-ar="سنوات خبرة">Years Experience</div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8 text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl font-extrabold text-accent mb-2">500+</div>
+                    <div class="text-gray-500 font-medium" data-en="Happy Clients" data-ar="عملاء راضون">Happy Clients</div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8 text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl font-extrabold text-primary mb-2">50+</div>
+                    <div class="text-gray-500 font-medium" data-en="Products &amp; Solutions" data-ar="منتجات وحلول">Products &amp; Solutions</div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8 text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl font-extrabold text-accent mb-2">24/7</div>
+                    <div class="text-gray-500 font-medium" data-en="Support Available" data-ar="دعم متاح">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. SERVICES -->
+<section id="services" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary" data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
+            <div class="title-bar"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto"
+               data-en="Comprehensive solutions across multiple sectors, delivered with excellence and reliability."
+               data-ar="حلول شاملة عبر قطاعات متعددة، تُقدَّم بتميز وموثوقية.">
+                Comprehensive solutions across multiple sectors, delivered with excellence and reliability.
+            </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-shield-halved text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Defense &amp; Security" data-ar="الدفاع والأمن">Defense &amp; Security</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="Military-grade procurement and security systems supply" data-ar="توريد المعدات العسكرية وأنظمة الأمن">Military-grade procurement and security systems supply</p>
+            </div>
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-oil-well text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Oil &amp; Gas" data-ar="النفط والغاز">Oil &amp; Gas</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="Equipment for upstream and downstream operations" data-ar="معدات لعمليات النفط والغاز البرية والبحرية">Equipment for upstream and downstream operations</p>
+            </div>
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-plane text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Aviation" data-ar="الطيران">Aviation</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="Ground support equipment and aviation supplies" data-ar="معدات الدعم الأرضي ومستلزمات الطيران">Ground support equipment and aviation supplies</p>
+            </div>
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-building text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Construction &amp; Infrastructure" data-ar="البناء والبنية التحتية">Construction &amp; Infrastructure</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="Building materials and infrastructure solutions" data-ar="مواد البناء وحلول البنية التحتية">Building materials and infrastructure solutions</p>
+            </div>
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-solar-panel text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Renewable Energy" data-ar="الطاقة المتجددة">Renewable Energy</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="Solar and sustainable energy solutions" data-ar="حلول الطاقة الشمسية والمتجددة">Solar and sustainable energy solutions</p>
+            </div>
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-anchor text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Marine" data-ar="القطاع البحري">Marine</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="Marine systems, vessels and offshore equipment" data-ar="أنظمة ومعدات بحرية وبرية للقطاع البحري">Marine systems, vessels and offshore equipment</p>
+            </div>
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-print text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Printing Solutions" data-ar="حلول الطباعة">Printing Solutions</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="Industrial and commercial printing supplies" data-ar="مستلزمات الطباعة الصناعية والتجارية">Industrial and commercial printing supplies</p>
+            </div>
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-kit-medical text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Health &amp; Safety" data-ar="الصحة والسلامة">Health &amp; Safety</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="PPE, safety equipment and health supplies" data-ar="معدات الحماية الشخصية والسلامة المهنية">PPE, safety equipment and health supplies</p>
+            </div>
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-truck-fast text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Logistics &amp; General Trading" data-ar="اللوجستيات والتجارة العامة">Logistics &amp; General Trading</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="End-to-end supply chain and trading" data-ar="حلول سلسلة الإمداد والتجارة الشاملة">End-to-end supply chain and trading</p>
+            </div>
+
+            <div class="service-card bg-white rounded-2xl p-6 text-center shadow-sm fade-in">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-gears text-white text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-primary text-sm mb-1" data-en="Special Projects &amp; Contracts" data-ar="المشاريع والعقود الخاصة">Special Projects &amp; Contracts</h3>
+                <p class="text-xs text-gray-500 mt-2 leading-relaxed" data-en="Tailored solutions for complex project requirements" data-ar="حلول مخصصة للمتطلبات والمشاريع المعقدة">Tailored solutions for complex project requirements</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 4. TRACK RECORD -->
+<section id="track-record" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary" data-en="Track Record" data-ar="سجل الأعمال">Track Record</h2>
+            <div class="title-bar"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto"
+               data-en="Trusted by Oman's most prestigious institutions and organizations."
+               data-ar="موثوق به من قبل أبرز المؤسسات والمنظمات في عُمان.">
+                Trusted by Oman's most prestigious institutions and organizations.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="track-card fade-in">
+                <div class="w-14 h-14 rounded-full flex items-center justify-center mb-5" style="background:rgba(3,77,87,.1)">
+                    <i class="fa-solid fa-plane text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-1" data-en="Royal Air Force of Oman" data-ar="سلاح الجو السلطاني العماني">Royal Air Force of Oman</h3>
+                <p class="text-accent font-semibold mb-4" data-en="Aviation Supply &amp; Ground Support" data-ar="التوريد والدعم الأرضي للطيران">Aviation Supply &amp; Ground Support</p>
+                <p class="text-gray-500 text-sm leading-relaxed"
+                   data-en="Supplied critical aviation components, ground support equipment, and technical supplies to support RAFO operations across multiple bases."
+                   data-ar="توريد مكونات الطيران الحيوية ومعدات الدعم الأرضي والمستلزمات التقنية لعمليات سلاح الجو السلطاني عبر قواعد متعددة.">
+                    Supplied critical aviation components, ground support equipment, and technical supplies to support RAFO operations across multiple bases.
+                </p>
+            </div>
+
+            <div class="track-card fade-in">
+                <div class="w-14 h-14 rounded-full flex items-center justify-center mb-5" style="background:rgba(3,77,87,.1)">
+                    <i class="fa-solid fa-anchor text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-1" data-en="Royal Navy of Oman" data-ar="البحرية السلطانية العمانية">Royal Navy of Oman</h3>
+                <p class="text-accent font-semibold mb-4" data-en="Marine Systems &amp; Equipment" data-ar="أنظمة ومعدات بحرية">Marine Systems &amp; Equipment</p>
+                <p class="text-gray-500 text-sm leading-relaxed"
+                   data-en="Delivered marine systems, vessel equipment, and maintenance supplies to enhance Royal Navy of Oman operational capabilities."
+                   data-ar="توريد الأنظمة البحرية ومعدات السفن والمستلزمات لتعزيز القدرات التشغيلية للبحرية السلطانية العمانية.">
+                    Delivered marine systems, vessel equipment, and maintenance supplies to enhance Royal Navy of Oman operational capabilities.
+                </p>
+            </div>
+
+            <div class="track-card fade-in">
+                <div class="w-14 h-14 rounded-full flex items-center justify-center mb-5" style="background:rgba(3,77,87,.1)">
+                    <i class="fa-solid fa-truck-fast text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-1" data-en="ASYAD Group" data-ar="مجموعة أسياد">ASYAD Group</h3>
+                <p class="text-accent font-semibold mb-4" data-en="Logistics &amp; Infrastructure Support" data-ar="دعم اللوجستيات والبنية التحتية">Logistics &amp; Infrastructure Support</p>
+                <p class="text-gray-500 text-sm leading-relaxed"
+                   data-en="Provided comprehensive logistics supplies and infrastructure support solutions for ASYAD's extensive port and transport operations."
+                   data-ar="توفير مستلزمات لوجستية شاملة وحلول دعم البنية التحتية لعمليات الموانئ والنقل الواسعة لمجموعة أسياد.">
+                    Provided comprehensive logistics supplies and infrastructure support solutions for ASYAD's extensive port and transport operations.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 5. OUR CLIENTS -->
+<section id="clients" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary" data-en="Our Clients" data-ar="عملاؤنا">Our Clients</h2>
+            <div class="title-bar"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto"
+               data-en="Proudly serving leading organizations across Oman."
+               data-ar="نخدم بفخر المنظمات الرائدة في عُمان.">
+                Proudly serving leading organizations across Oman.
+            </p>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 fade-in">
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/rafo.png" alt="Royal Air Force of Oman" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/rno.png" alt="Royal Navy of Oman" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/rao.png" alt="Royal Army of Oman" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/saf-moral.png" alt="SAF Moral" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/rop.png" alt="Royal Oman Police" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/asyad.png" alt="ASYAD Group" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/oman-air.png" alt="Oman Air" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/mwasalat.png" alt="Mwasalat" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/oq.png" alt="OQ" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/omantel.png" alt="Omantel" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/vodafone.png" alt="Vodafone" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/tra.png" alt="TRA Oman" class="logo-img-client"></div>
+            <div class="logo-card bg-white shadow-sm"><img src="/assets/clients/abraj.png" alt="Abraj" class="logo-img-client"></div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. BRANDS WE WORK WITH -->
+<section id="brands" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary" data-en="Brands We Work With" data-ar="الماركات التي نعمل معها">Brands We Work With</h2>
+            <div class="title-bar"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto"
+               data-en="Partnering with the world's leading brands to deliver excellence."
+               data-ar="نتشارك مع أبرز الماركات العالمية لتقديم التميز.">
+                Partnering with the world's leading brands to deliver excellence.
+            </p>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 fade-in">
+            <div class="logo-card bg-cream"><img src="/assets/brands/caterpillar.png" alt="Caterpillar" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/hitachi.png" alt="Hitachi" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/jcb.png" alt="JCB" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/volvo.png" alt="Volvo" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/dunlop.png" alt="Dunlop" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/fuji-electric.png" alt="Fuji Electric" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/sumitomo.png" alt="Sumitomo" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/fluke.png" alt="Fluke" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/firemax.png" alt="Firemax" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/danlamp.png" alt="Danlamp" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/giti.png" alt="Giti" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/goodride.png" alt="Goodride" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/primewell.png" alt="Primewell" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/dana.png" alt="Dana" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/xtreme-power.png" alt="Xtreme Power" class="logo-img-client"></div>
+            <div class="logo-card bg-cream"><img src="/assets/brands/frontier.png" alt="Frontier" class="logo-img-client"></div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. PARTNERSHIP -->
+<section id="partnership" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary" data-en="Our Partnerships" data-ar="شراكاتنا">Our Partnerships</h2>
+            <div class="title-bar"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg"
+               data-en="We believe in building strong partnerships based on trust, quality, and innovation."
+               data-ar="نؤمن ببناء شراكات قوية قائمة على الثقة والجودة والابتكار.">
+                We believe in building strong partnerships based on trust, quality, and innovation.
+            </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="partnership-item fade-in">
+                <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-handshake text-white text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-1" data-en="Strategic Partnerships" data-ar="شراكات استراتيجية">Strategic Partnerships</h3>
+                    <p class="text-gray-500 text-sm" data-en="Long-term alliances with global industry leaders" data-ar="تحالفات طويلة الأمد مع رواد الصناعة العالميين">Long-term alliances with global industry leaders</p>
+                </div>
+            </div>
+
+            <div class="partnership-item fade-in">
+                <div class="w-12 h-12 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-certificate text-white text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-1" data-en="Exclusive Distribution" data-ar="التوزيع الحصري">Exclusive Distribution</h3>
+                    <p class="text-gray-500 text-sm" data-en="Authorized distributor for top global brands" data-ar="موزع معتمد لأبرز الماركات العالمية">Authorized distributor for top global brands</p>
+                </div>
+            </div>
+
+            <div class="partnership-item fade-in">
+                <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-magnifying-glass text-white text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-1" data-en="Product Sourcing" data-ar="مصادر المنتجات">Product Sourcing</h3>
+                    <p class="text-gray-500 text-sm" data-en="Global sourcing for specialized requirements" data-ar="مصادر عالمية للمتطلبات المتخصصة">Global sourcing for specialized requirements</p>
+                </div>
+            </div>
+
+            <div class="partnership-item fade-in">
+                <div class="w-12 h-12 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-briefcase text-white text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-1" data-en="Brand Portfolio" data-ar="محفظة الماركات">Brand Portfolio</h3>
+                    <p class="text-gray-500 text-sm" data-en="Diverse portfolio of trusted global brands" data-ar="محفظة متنوعة من الماركات العالمية الموثوقة">Diverse portfolio of trusted global brands</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 8. TEAM -->
+<section id="team" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary" data-en="Our Leadership" data-ar="قيادتنا">Our Leadership</h2>
+            <div class="title-bar"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto"
+               data-en="Meet the experienced leaders driving Alali Investment forward."
+               data-ar="تعرف على القادة المتمرسين الذين يقودون العلالي للإستثمار.">
+                Meet the experienced leaders driving Alali Investment forward.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center fade-in hover:shadow-xl transition-shadow">
+                <div class="monogram">AG</div>
+                <h3 class="text-xl font-bold text-primary mb-1">Ali Ghalib Alsaid</h3>
+                <p class="text-accent font-semibold mb-4" data-en="Chief Executive Officer" data-ar="الرئيس التنفيذي">Chief Executive Officer</p>
+                <p class="text-gray-500 text-sm leading-relaxed"
+                   data-en="Leading Alali Investment with strategic vision and dedication to delivering excellence across all sectors."
+                   data-ar="يقود العلالي للإستثمار برؤية استراتيجية والتزام بتحقيق التميز عبر جميع القطاعات.">
+                    Leading Alali Investment with strategic vision and dedication to delivering excellence across all sectors.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center fade-in hover:shadow-xl transition-shadow">
+                <div class="monogram">AA</div>
+                <h3 class="text-xl font-bold text-primary mb-1">Ali Adnan Al-Zaabi</h3>
+                <p class="text-accent font-semibold mb-4" data-en="Co-Founder" data-ar="المؤسس المشارك">Co-Founder</p>
+                <p class="text-gray-500 text-sm leading-relaxed"
+                   data-en="Co-driving the company's growth strategy and forging strong global partnerships across sectors."
+                   data-ar="يشارك في قيادة استراتيجية نمو الشركة وبناء شراكات عالمية قوية عبر القطاعات.">
+                    Co-driving the company's growth strategy and forging strong global partnerships across sectors.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center fade-in hover:shadow-xl transition-shadow">
+                <div class="monogram">SZ</div>
+                <h3 class="text-xl font-bold text-primary mb-1">Salim Al Zufaiti</h3>
+                <p class="text-accent font-semibold mb-4" data-en="General Manager" data-ar="المدير العام">General Manager</p>
+                <p class="text-gray-500 text-sm leading-relaxed"
+                   data-en="Overseeing day-to-day operations and ensuring excellence in service delivery across all business units."
+                   data-ar="يشرف على العمليات اليومية ويضمن التميز في تقديم الخدمات عبر جميع وحدات الأعمال.">
+                    Overseeing day-to-day operations and ensuring excellence in service delivery across all business units.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 9. CONTACT -->
+<section id="contact" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h2>
+            <div class="title-bar"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto"
+               data-en="Get in touch with our team for inquiries, quotations, and partnerships."
+               data-ar="تواصل مع فريقنا للاستفسارات وعروض الأسعار والشراكات.">
+                Get in touch with our team for inquiries, quotations, and partnerships.
+            </p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-12">
+
+            <!-- Left: info -->
+            <div class="fade-in space-y-6">
+                <div class="bg-white rounded-2xl p-7 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-6" data-en="Contact Information" data-ar="معلومات التواصل">Contact Information</h3>
+                    <div class="space-y-5">
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(3,77,87,.1)">
+                                <i class="fa-solid fa-location-dot text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-700 mb-0.5" data-en="Address" data-ar="العنوان">Address</div>
+                                <div class="text-gray-500" data-en="Bousher, Muscat, Sultanate of Oman" data-ar="بوشر، مسقط، سلطنة عمان">Bousher, Muscat, Sultanate of Oman</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(3,77,87,.1)">
+                                <i class="fa-solid fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-700 mb-0.5" data-en="Phone" data-ar="الهاتف">Phone</div>
+                                <div class="text-gray-500 flex flex-wrap gap-x-3 gap-y-1">
+                                    <a href="tel:+96899532326" class="hover:text-primary transition-colors">+968 99532326</a>
+                                    <span class="text-gray-300">|</span>
+                                    <a href="tel:+96894898588" class="hover:text-primary transition-colors">+968 94898588</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(3,77,87,.1)">
+                                <i class="fa-solid fa-clock text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-700 mb-0.5" data-en="Working Hours" data-ar="ساعات العمل">Working Hours</div>
+                                <div class="text-gray-500" data-en="Sunday &ndash; Thursday, 8:00 AM &ndash; 5:00 PM" data-ar="الأحد &ndash; الخميس، 8:00 صباحاً &ndash; 5:00 مساءً">Sunday &ndash; Thursday, 8:00 AM &ndash; 5:00 PM</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(45,159,93,.15)">
+                                <i class="fa-brands fa-whatsapp text-accent"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-700 mb-0.5">WhatsApp</div>
+                                <a href="https://wa.me/96899532326" target="_blank" rel="noopener" class="text-accent hover:text-primary transition-colors">+968 99532326</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Map placeholder -->
+                <div class="map-placeholder">
+                    <i class="fa-solid fa-map-location-dot text-4xl mb-3" style="color:rgba(3,77,87,.5)"></i>
+                    <p class="font-semibold" style="color:rgba(3,77,87,.8)" data-en="Bousher, Muscat" data-ar="بوشر، مسقط">Bousher, Muscat</p>
+                    <p class="text-sm mt-1" style="color:rgba(3,77,87,.5)" data-en="Sultanate of Oman" data-ar="سلطنة عمان">Sultanate of Oman</p>
+                </div>
+            </div>
+
+            <!-- Right: form -->
+            <div class="fade-in">
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-6" data-en="Send Us a Message" data-ar="أرسل لنا رسالة">Send Us a Message</h3>
+                    <form id="contact-form" onsubmit="submitContactForm(event)" class="space-y-5">
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-en="Your Name" data-ar="اسمك">Your Name</label>
+                            <input type="text" id="form-name" required
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:border-primary transition-all text-gray-800"
+                                   style="--tw-ring-color:rgba(3,77,87,.3)"
+                                   data-en-placeholder="Enter your full name"
+                                   data-ar-placeholder="أدخل اسمك الكامل"
+                                   placeholder="Enter your full name">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-en="Subject" data-ar="الموضوع">Subject</label>
+                            <select id="form-subject" required
+                                    class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:border-primary transition-all bg-white text-gray-800 cursor-pointer appearance-none">
+                                <option value="" data-en="Select a subject..." data-ar="اختر الموضوع...">Select a subject...</option>
+                                <option value="General Inquiry" data-en="General Inquiry" data-ar="استفسار عام">General Inquiry</option>
+                                <option value="Request for Quotation" data-en="Request for Quotation" data-ar="طلب عرض سعر">Request for Quotation</option>
+                                <option value="Tender &amp; Bidding" data-en="Tender &amp; Bidding" data-ar="المناقصات والعطاءات">Tender &amp; Bidding</option>
+                                <option value="Careers" data-en="Careers" data-ar="الوظائف">Careers</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-en="Message" data-ar="الرسالة">Message</label>
+                            <textarea id="form-message" rows="5" required
+                                      class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:border-primary transition-all resize-none text-gray-800"
+                                      data-en-placeholder="Write your message here..."
+                                      data-ar-placeholder="اكتب رسالتك هنا..."
+                                      placeholder="Write your message here..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="w-full inline-flex items-center justify-center gap-3 bg-primary hover:opacity-90 text-white font-semibold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 10. FOOTER -->
+<footer class="bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid md:grid-cols-3 gap-12">
+
+            <!-- Brand -->
+            <div>
+                <img src="/logo.svg" alt="Alali Investment" class="h-14 w-auto mb-4 brightness-0 invert">
+                <p class="leading-relaxed text-sm mb-4" style="color:rgba(255,255,255,.7)"
+                   data-en="Alali Investment &mdash; Oman's trusted gateway for trading, supply, and special project solutions."
+                   data-ar="العلالي للإستثمار &mdash; البوابة الموثوقة لعُمان للتجارة والتوريد وحلول المشاريع الخاصة.">
+                    Alali Investment &mdash; Oman's trusted gateway for trading, supply, and special project solutions.
+                </p>
+                <a href="https://wa.me/96899532326" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 text-sm transition-colors"
+                   style="color:rgba(255,255,255,.7)"
+                   onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>+968 99532326</span>
+                </a>
+            </div>
+
+            <!-- Quick links -->
+            <div>
+                <h4 class="font-bold text-lg mb-6" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#about" class="flex items-center gap-2 text-sm transition-colors" style="color:rgba(255,255,255,.7)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+                        <i class="fa-solid fa-chevron-right text-accent text-xs chev"></i>
+                        <span data-en="About Us" data-ar="عن الشركة">About Us</span>
+                    </a></li>
+                    <li><a href="#services" class="flex items-center gap-2 text-sm transition-colors" style="color:rgba(255,255,255,.7)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+                        <i class="fa-solid fa-chevron-right text-accent text-xs chev"></i>
+                        <span data-en="Services" data-ar="الخدمات">Services</span>
+                    </a></li>
+                    <li><a href="#track-record" class="flex items-center gap-2 text-sm transition-colors" style="color:rgba(255,255,255,.7)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+                        <i class="fa-solid fa-chevron-right text-accent text-xs chev"></i>
+                        <span data-en="Track Record" data-ar="سجل الأعمال">Track Record</span>
+                    </a></li>
+                    <li><a href="#clients" class="flex items-center gap-2 text-sm transition-colors" style="color:rgba(255,255,255,.7)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+                        <i class="fa-solid fa-chevron-right text-accent text-xs chev"></i>
+                        <span data-en="Our Clients" data-ar="عملاؤنا">Our Clients</span>
+                    </a></li>
+                    <li><a href="#team" class="flex items-center gap-2 text-sm transition-colors" style="color:rgba(255,255,255,.7)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+                        <i class="fa-solid fa-chevron-right text-accent text-xs chev"></i>
+                        <span data-en="Our Team" data-ar="فريقنا">Our Team</span>
+                    </a></li>
+                    <li><a href="#contact" class="flex items-center gap-2 text-sm transition-colors" style="color:rgba(255,255,255,.7)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+                        <i class="fa-solid fa-chevron-right text-accent text-xs chev"></i>
+                        <span data-en="Contact Us" data-ar="تواصل معنا">Contact Us</span>
+                    </a></li>
+                </ul>
+            </div>
+
+            <!-- Contact info (no email) -->
+            <div>
+                <h4 class="font-bold text-lg mb-6" data-en="Get In Touch" data-ar="تواصل معنا">Get In Touch</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-sm" style="color:rgba(255,255,255,.7)">
+                        <i class="fa-solid fa-location-dot text-accent mt-0.5 flex-shrink-0"></i>
+                        <span data-en="Bousher, Muscat, Sultanate of Oman" data-ar="بوشر، مسقط، سلطنة عمان">Bousher, Muscat, Sultanate of Oman</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-sm" style="color:rgba(255,255,255,.7)">
+                        <i class="fa-solid fa-phone text-accent flex-shrink-0"></i>
+                        <a href="tel:+96899532326" class="hover:text-white transition-colors">+968 99532326</a>
+                    </li>
+                    <li class="flex items-center gap-3 text-sm" style="color:rgba(255,255,255,.7)">
+                        <i class="fa-solid fa-phone text-accent flex-shrink-0"></i>
+                        <a href="tel:+96894898588" class="hover:text-white transition-colors">+968 94898588</a>
+                    </li>
+                    <li class="flex items-center gap-3 text-sm" style="color:rgba(255,255,255,.7)">
+                        <i class="fa-solid fa-clock text-accent flex-shrink-0"></i>
+                        <span data-en="Sun &ndash; Thu: 8:00 AM &ndash; 5:00 PM" data-ar="الأحد &ndash; الخميس: 8:00 ص &ndash; 5:00 م">Sun &ndash; Thu: 8:00 AM &ndash; 5:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(255,255,255,.1)">
+            <p class="text-sm" style="color:rgba(255,255,255,.5)">
+                <span data-en="&copy; 2026 Alali Investment. All rights reserved." data-ar="&copy; 2026 العلالي للإستثمار. جميع الحقوق محفوظة.">&copy; 2026 Alali Investment. All rights reserved.</span>
+            </p>
+            <p class="text-xs flex items-center gap-1.5" style="color:rgba(255,255,255,.35)">
+                <i class="fa-solid fa-globe"></i>
+                <span data-en="Sultanate of Oman" data-ar="سلطنة عمان">Sultanate of Oman</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp button -->
+<a id="whatsapp-fab" href="https://wa.me/96899532326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+</a>
+
+<!-- Scroll-to-top button -->
+<button id="scroll-top" onclick="scrollToTop()" aria-label="Scroll to top">
+    <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- Toast notification -->
+<div id="toast"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════ -->
+<script>
+/* ── Language ─────────────────────────────────────────── */
+let currentLang = localStorage.getItem('alali_lang') || 'en';
+
+function applyLanguage(lang) {
+    currentLang = lang;
+    const html = document.documentElement;
+
+    if (lang === 'ar') {
+        html.lang = 'ar';
+        html.dir = 'rtl';
+        document.body.style.fontFamily = "'Tajawal', sans-serif";
+    } else {
+        html.lang = 'en';
+        html.dir = 'ltr';
+        document.body.style.fontFamily = "'Inter', sans-serif";
+    }
+
+    // Swap text content
+    document.querySelectorAll('[data-en],[data-ar]').forEach(el => {
+        const tag = el.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || tag === 'OPTION') return;
+        const txt = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+        if (txt !== null) el.innerHTML = txt;
+    });
+
+    // Swap placeholders
+    document.querySelectorAll('[data-en-placeholder],[data-ar-placeholder]').forEach(el => {
+        const ph = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+        if (ph) el.placeholder = ph;
+    });
+
+    // Swap select options
+    document.querySelectorAll('option[data-en],option[data-ar]').forEach(opt => {
+        const txt = lang === 'ar' ? opt.getAttribute('data-ar') : opt.getAttribute('data-en');
+        if (txt !== null) opt.textContent = txt;
+    });
+
+    // Language label buttons
+    const lbl = document.getElementById('lang-label');
+    const lblM = document.getElementById('lang-label-mobile');
+    if (lbl)  lbl.textContent  = lang === 'ar' ? 'English' : 'العربية';
+    if (lblM) lblM.textContent = lang === 'ar' ? 'EN' : 'AR';
+
+    localStorage.setItem('alali_lang', lang);
+}
+
+function toggleLanguage() {
+    applyLanguage(currentLang === 'en' ? 'ar' : 'en');
+}
+
+/* ── Mobile menu ─────────────────────────────────────── */
+function toggleMobileMenu() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+}
+function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+}
+
+/* ── Scroll effects ──────────────────────────────────── */
+window.addEventListener('scroll', function () {
+    const navbar = document.getElementById('navbar');
+    const scrollBtn = document.getElementById('scroll-top');
+    if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    if (window.scrollY > 400) {
+        scrollBtn.classList.add('show');
+    } else {
+        scrollBtn.classList.remove('show');
+    }
+}, { passive: true });
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── Fade-in on scroll ───────────────────────────────── */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+/* ── Toast ───────────────────────────────────────────── */
+function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+/* ── Contact form — email built at runtime only ──────── */
+function getRecipient() {
+    // Assembled at runtime so no address appears in source
+    const u = String.fromCharCode(97,108,105);       // ali
+    const dot = String.fromCharCode(46);              // .
+    const at  = String.fromCharCode(64);              // @
+    const d1  = String.fromCharCode(103,104,97,108,105,98); // ghalib
+    const d2  = String.fromCharCode(97,108,97,108,105);     // alali
+    const tld = String.fromCharCode(111,109);         // om
+    return u + dot + d1 + at + d2 + dot + tld;
+}
+
+function submitContactForm(e) {
+    e.preventDefault();
+    const name    = document.getElementById('form-name').value.trim();
+    const subject = document.getElementById('form-subject').value;
+    const message = document.getElementById('form-message').value.trim();
+    if (!name || !subject || !message) return;
+
+    const recipient = getRecipient();
+    const sub  = encodeURIComponent('[alali.om] ' + subject + ' \u2014 ' + name);
+    const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Subject: ' + subject + '\n\n' +
+        message
+    );
+    window.location.href = 'mailto:' + recipient + '?subject=' + sub + '&body=' + body;
+
+    const okMsg = currentLang === 'ar'
+        ? 'جارٍ فتح تطبيق البريد...'
+        : 'Opening your mail app...';
+    showToast(okMsg);
+}
+
+/* ── Loading screen ──────────────────────────────────── */
+window.addEventListener('load', function () {
+    const ls = document.getElementById('loading-screen');
+    setTimeout(() => {
+        ls.style.opacity = '0';
+        setTimeout(() => ls.remove(), 500);
+    }, 900);
+});
+
+/* ── Init ────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => applyLanguage(currentLang));
+</script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        [dir="rtl"] { font-family: 'Tajawal', sans-serif; }
+
+        /* ── Animated gradient for hero ─────────────────────── */
+        @keyframes gradientShift {
+            0%   { background-position: 0%   50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0%   50%; }
+        }
+        .hero-gradient {
+            background: linear-gradient(-45deg, #034d57, #2D9F5D, #045e6b, #1a8a4a, #034d57);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        /* ── Loading screen ─────────────────────────────────── */
+        @keyframes dotBounce {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50%       { transform: translateY(-10px); opacity: .6; }
+        }
+        @keyframes logoPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: .8; transform: scale(.97); }
+        }
+        #loading-screen {
+            position: fixed; inset: 0; background: #ffffff;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 9999; transition: opacity .5s ease;
+        }
+        #loading-screen img { animation: logoPulse 1.6s ease infinite; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: #2D9F5D; animation: dotBounce .7s ease infinite; }
+        .dot:nth-child(2) { animation-delay: .18s; }
+        .dot:nth-child(3) { animation-delay: .36s; }
+
+        /* ── Navbar ─────────────────────────────────────────── */
+        #navbar { transition: background .3s ease, box-shadow .3s ease; }
+        #navbar.scrolled {
+            background: rgba(3,77,87,.97) !important;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 24px rgba(0,0,0,.2);
+        }
+        /* Active nav link */
+        .nav-active {
+            color: #2D9F5D !important;
+            border-bottom: 2px solid #2D9F5D;
+            padding-bottom: 2px;
+        }
+
+        /* ── Mobile menu ─────────────────────────────────────── */
+        #mobile-menu { display: none; }
+        #mobile-menu.open { display: flex; }
+
+        /* ── Fade-in on scroll ───────────────────────────────── */
+        .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Title bar ───────────────────────────────────────── */
+        .title-bar { width: 56px; height: 4px; background: linear-gradient(to right, #034d57, #2D9F5D); border-radius: 2px; margin: .75rem auto 2rem; }
+
+        /* ── Vision box ──────────────────────────────────────── */
+        .vision-box { background: rgba(3,77,87,.05); border-left: 4px solid #2D9F5D; border-radius: 0 .875rem .875rem 0; padding: 1.5rem; }
+        [dir="rtl"] .vision-box { border-left: none; border-right: 4px solid #2D9F5D; border-radius: .875rem 0 0 .875rem; }
+
+        /* ── Service cards ───────────────────────────────────── */
+        .service-card { transition: transform .3s ease, box-shadow .3s ease; }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(3,77,87,.14); }
+
+        /* ── Track record cards ──────────────────────────────── */
+        .track-card { background: #fff; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,.07); border-left: 4px solid #2D9F5D; transition: transform .3s ease, box-shadow .3s ease; }
+        .track-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(3,77,87,.14); }
+        [dir="rtl"] .track-card { border-left: none; border-right: 4px solid #2D9F5D; }
+
+        /* ── Logo cards ──────────────────────────────────────── */
+        .logo-card { display: flex; align-items: center; justify-content: center; padding: 1rem; border-radius: .75rem; transition: box-shadow .25s ease; }
+        .logo-card:hover { box-shadow: 0 4px 16px rgba(3,77,87,.12); }
+        .logo-img-client { max-height: 80px; width: 100%; object-fit: contain; filter: grayscale(100%); opacity: .65; transition: filter .3s ease, opacity .3s ease; }
+        .logo-img-client:hover { filter: grayscale(0%); opacity: 1; }
+
+        /* ── Partnership items ───────────────────────────────── */
+        .partnership-item { display: flex; align-items: flex-start; gap: 1rem; background: #fff; border-radius: .875rem; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,.06); transition: transform .3s ease; }
+        .partnership-item:hover { transform: translateY(-3px); }
+
+        /* ── Team monogram ───────────────────────────────────── */
+        .monogram { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #034d57, #2D9F5D); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 700; color: #fff; margin: 0 auto 1.25rem; box-shadow: 0 4px 16px rgba(3,77,87,.25); }
+
+        /* ── Map placeholder ─────────────────────────────────── */
+        .map-placeholder { background: linear-gradient(135deg, #e4f2f5, #d1eade); border-radius: .875rem; height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #034d57; }
+
+        /* ── WhatsApp FAB ────────────────────────────────────── */
+        #whatsapp-fab { position: fixed; bottom: 84px; right: 20px; z-index: 900; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,.45); transition: transform .3s ease; text-decoration: none; }
+        [dir="rtl"] #whatsapp-fab { right: auto; left: 20px; }
+        #whatsapp-fab:hover { transform: scale(1.12); }
+
+        /* ── Scroll-to-top button ────────────────────────────── */
+        #scroll-top { position: fixed; bottom: 20px; right: 20px; z-index: 900; width: 48px; height: 48px; border-radius: 50%; background: #034d57; border: none; color: #fff; font-size: 1.1rem; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(3,77,87,.35); transition: transform .3s ease, background .3s ease; }
+        [dir="rtl"] #scroll-top { right: auto; left: 20px; }
+        #scroll-top.show { display: flex; }
+        #scroll-top:hover { background: #2D9F5D; transform: scale(1.06); }
+
+        /* ── RTL chevron fix ─────────────────────────────────── */
+        [dir="rtl"] .chev { transform: scaleX(-1); display: inline-block; }
+
+        /* ── Toast notification ──────────────────────────────── */
+        #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: #034d57; color: #fff; padding: .75rem 1.75rem; border-radius: 2rem; font-size: .9rem; z-index: 2000; box-shadow: 0 6px 24px rgba(0,0,0,.2); opacity: 0; transition: opacity .4s ease, transform .4s ease; pointer-events: none; }
+        #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* ── Select arrow ────────────────────────────────────── */
+        select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23034d57' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+        [dir="rtl"] select { background-position: left 1rem center; padding-right: 1rem; padding-left: 2.5rem; }
+
+        /* ── Inner page hero (shorter ~40vh) ─────────────────── */
+        .inner-hero {
+            background: linear-gradient(-45deg, #034d57, #2D9F5D, #045e6b, #1a8a4a, #034d57);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5rem; /* navbar height offset */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ── Client logo marquee ─────────────────────────────── */
+        .marquee-outer { overflow: hidden; width: 100%; position: relative; }
+        .marquee-outer::before,
+        .marquee-outer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            z-index: 2;
+        }
+        .marquee-outer::before { left: 0; background: linear-gradient(to right, white, transparent); }
+        .marquee-outer::after  { right: 0; background: linear-gradient(to left, white, transparent); }
+
+        @keyframes marqueeScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            animation: marqueeScroll 30s linear infinite;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+        .marquee-item { flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; }
+        .marquee-item img { max-height: 60px; max-width: 120px; object-fit: contain; filter: grayscale(100%); opacity: .6; transition: filter .3s ease, opacity .3s ease; }
+        .marquee-item img:hover { filter: grayscale(0%); opacity: 1; }
+
+        /* ── Services expanded (services.html) ───────────────── */
+        .service-card-lg { transition: transform .3s ease, box-shadow .3s ease; }
+        .service-card-lg:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(3,77,87,.14); }
+
+        /* ── CTA banner ──────────────────────────────────────── */
+        .cta-banner {
+            background: linear-gradient(-45deg, #034d57, #2D9F5D, #045e6b, #1a8a4a);
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        /* ── Footer link hover ───────────────────────────────── */
+        .footer-link { color: rgba(255,255,255,.7); transition: color .2s ease; text-decoration: none; }
+        .footer-link:hover { color: #fff; }
+
+        /* ── Dropdown navigation ─────────────────────────────── */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: rgba(255,255,255,.8);
+            font-family: inherit;
+            font-weight: 500;
+            font-size: inherit;
+            transition: color .2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+        .dropdown-toggle:hover,
+        .dropdown.open .dropdown-toggle { color: #fff; }
+        .dropdown-toggle .fa-chevron-down { color: rgba(255,255,255,.5); font-size: .6rem; transition: transform .2s ease, color .2s ease; }
+        .dropdown.open .dropdown-toggle .fa-chevron-down { transform: rotate(180deg); color: #fff; }
+        .dropdown-toggle.nav-active { color: #2D9F5D !important; }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            background: rgba(3,77,87,.98);
+            backdrop-filter: blur(14px);
+            border-radius: .75rem;
+            padding: .35rem;
+            min-width: 210px;
+            box-shadow: 0 8px 32px rgba(0,0,0,.35);
+            border: 1px solid rgba(255,255,255,.1);
+            z-index: 200;
+            animation: dropFadeIn .15s ease forwards;
+        }
+        @keyframes dropFadeIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        [dir="rtl"] .dropdown-menu { left: auto; right: 0; }
+        .dropdown.open > .dropdown-menu {
+            display: block;
+        }
+        .dropdown-item {
+            display: block;
+            padding: .55rem 1rem;
+            color: rgba(255,255,255,.75);
+            font-size: .85rem;
+            font-weight: 500;
+            border-radius: .5rem;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background .15s ease, color .15s ease;
+        }
+        .dropdown-item:hover { background: rgba(255,255,255,.1); color: #fff; }
+        .dropdown-item.active-child { color: #2D9F5D; font-weight: 600; }
+
+        /* ── Mobile dropdown ─────────────────────────────────── */
+        .mobile-dropdown-menu { display: none; }
+        .mobile-dropdown-menu.open { display: flex; }
+        .dropdown-chevron { transition: transform .25s ease; display: inline-block; }
+        .dropdown-chevron.rotated { transform: rotate(180deg); }
+
+        /* ── Accent tagline strip ────────────────────────────── */
+        .tagline-strip {
+            background: linear-gradient(to right, #034d57, #2D9F5D);
+            padding: 1.1rem 1.5rem; text-align: center;
+            color: #fff; font-size: 1.1rem; font-weight: 500;
+            letter-spacing: .02em;
+        }
+
+        /* ── Leadership cards ────────────────────────────────── */
+        .leader-card-lg {
+            background: #fff; border-radius: 1.25rem; padding: 2.5rem;
+            box-shadow: 0 4px 24px rgba(3,77,87,.1); border-top: 4px solid #2D9F5D;
+            transition: transform .3s ease, box-shadow .3s ease; text-align: center;
+        }
+        .leader-card-lg:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(3,77,87,.15); }
+        .leader-card-sm {
+            background: #fff; border-radius: 1rem; padding: 2rem;
+            box-shadow: 0 2px 16px rgba(0,0,0,.07); border-left: 4px solid #2D9F5D;
+            transition: transform .3s ease, box-shadow .3s ease; text-align: center;
+        }
+        .leader-card-sm:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(3,77,87,.12); }
+        [dir="rtl"] .leader-card-sm { border-left: none; border-right: 4px solid #2D9F5D; }
+
+        /* ── Monogram large (leadership page) ───────────────── */
+        .monogram-lg {
+            width: 110px; height: 110px; border-radius: 50%;
+            background: linear-gradient(135deg, #034d57, #2D9F5D);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.25rem; font-weight: 700; color: #fff;
+            margin: 0 auto 1.5rem; box-shadow: 0 6px 24px rgba(3,77,87,.3);
+        }
+
+        /* ── Service sub-page capability list ───────────────── */
+        .capability-item {
+            display: flex; align-items: flex-start; gap: .875rem;
+            padding: .875rem 1.25rem; background: #fff;
+            border-radius: .75rem; box-shadow: 0 1px 8px rgba(0,0,0,.06);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .capability-item:hover { transform: translateX(4px); box-shadow: 0 4px 16px rgba(3,77,87,.1); }
+        [dir="rtl"] .capability-item:hover { transform: translateX(-4px); }
+
+        /* ── CEO signature area ──────────────────────────────── */
+        .ceo-signature { border-top: 2px solid #e5e7eb; padding-top: 1.5rem; margin-top: 2rem; }
+        .signature-line { width: 120px; height: 2px; background: linear-gradient(to right,#034d57,#2D9F5D); margin-top: .5rem; }

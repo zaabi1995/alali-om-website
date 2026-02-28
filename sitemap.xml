@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://alali.om/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/about.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/services.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/clients.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/leadership.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/ceo-message.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/contact.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/services/defense.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/services/oil-gas.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/services/aviation.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/services/construction.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://alali.om/services/renewable-energy.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+</urlset>
